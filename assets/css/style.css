@@ -1,9 +1,12 @@
 /*Styling for index.html*/
+html {
+  height: 100%;
+}
 
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 header {
@@ -49,6 +52,8 @@ header {
   margin-left: 10px;
 }
 
+/*I added a top_section2 section composed of buttons and a header to account for the change in format of the header in smaller viewport.*/
+
 #top_section2 {
   display: none;
 }
@@ -65,14 +70,11 @@ header {
 
 .main {
   background-color: #ffffff;
-  overflow: auto;
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
-  margin-bottom: 20px;
   padding-right: 20px;
   width: 960px;
-  position: relative;
 }
 
 h2 {
@@ -183,24 +185,6 @@ h2 {
 
 /*container section */
 
-/*.Portfolio {
-  background-color: #ffffff;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  padding-right: 20px;
-  position: center;
-  width: 960px;
-  overflow: auto;
-} */
-
-/*.photo-grid-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-} */
-
 .photo-grid {
   background-color: #ffffff;
   width: 900px;
@@ -226,8 +210,11 @@ h2 {
   top: 150px;
   background-color: #4aaaa5;
   color: white;
-  padding: 5px;
+  display: block;
   margin-left: auto;
+  width: 200px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .photo-grid-item {
@@ -237,16 +224,24 @@ h2 {
   position: relative;
 }
 
+/*position of footer should be absolute in order for it to be sticky. */
 .footer {
-  position: absolute;
+  position: fixed;
+  left: 0;
   bottom: 0;
   background-color: #666666;
   width: 100%;
-  height: 50px;
+  height: 20px;
   border-top: solid 5px #4aaaa5;
 }
 
+/*images should not be assigned set dimensions (height and width) for future reference */
+
 @media screen and (max-width: 980px) {
+  body {
+    position: relative;
+    height: 100%;
+  }
   #name {
     font-size: 3vw;
     right: 60%;
@@ -261,9 +256,14 @@ h2 {
     font-size: 15px;
   }
 
+  #top_section2 {
+    display: none;
+  }
+
   .buttons2 {
     display: none;
   }
+
   .main {
     height: 385px;
     width: 400px;
@@ -286,16 +286,14 @@ h2 {
   }
 
   .photo-grid {
-    height: 700px;
-    width: 500px;
     float: left;
     margin-left: 20px;
     margin-right: 40px;
   }
 
   .photo-grid-item {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
   }
 
   #form_wrapper {
@@ -334,6 +332,10 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    position: relative;
+    height: 100%;
+  }
   #name {
     font-size: 3vw;
     right: 60%;
@@ -355,6 +357,9 @@ h2 {
     font-size: 15px;
     margin-right: 2px;
     height: 5px;
+  }
+  #top_section2 {
+    display: none;
   }
 
   .buttons2 {
@@ -435,6 +440,11 @@ h2 {
     position: static;
   }
 
+  body {
+    position: relative;
+    height: 100%;
+  }
+
   #name {
     display: none;
     font-size: 3vw;
@@ -448,6 +458,7 @@ h2 {
   }
 
   .top_section2 {
+    display: block;
     background-color: #4aaaa5;
     height: 60px;
     width: 100%;
@@ -468,6 +479,7 @@ h2 {
     font-size: 10px;
     padding-top: 10px;
     margin-top: 10px;
+    display: block;
   }
 
   .button_properties {
@@ -489,7 +501,9 @@ h2 {
     margin-left: 5vw;
     margin-right: 5vw;
     margin-top: 50px;
-    height: 80%;
+    margin-bottom: 50px;
+    height: 800px;
+    position: relative;
   }
 
   #image {
@@ -507,16 +521,16 @@ h2 {
   }
 
   .photo-grid {
-    height: 700px;
-    width: 500px;
+    height: 1000px;
+    width: 300px;
     float: left;
     margin-left: 20px;
     margin-right: 40px;
   }
 
   .photo-grid-item {
-    height: 200px;
-    width: 200px;
+    width: 100%;
+    margin-left: 30px;
   }
 
   #form_wrapper {
@@ -527,7 +541,7 @@ h2 {
   }
 
   .form {
-    width: 400px;
+    width: 250px;
     height: 500px;
   }
 
@@ -540,15 +554,15 @@ h2 {
   }
 
   #name_button {
-    width: 400px;
+    width: 200px;
   }
 
   #email_button {
-    width: 400px;
+    width: 200px;
   }
 
   #message_button {
-    width: 400px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   }
 }
